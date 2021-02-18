@@ -1,0 +1,12 @@
+apidocs*
+build*
+
+RobWork/bin*
+Robwork/libs/*
+RobWorkStudio/bin*
+
+*.dll
+*.lib
+*.exp
+
+.vscode*

@@ -128,6 +128,10 @@ namespace
             readVec(face[1], input);
             readVec(face[2], input);
 
+            Rotation3D <float> scale_rot = Rotation3D<float>  (1e-3, 0, 0, 0,1e-3, 0, 0, 0,1e-3);
+            Transform3D	<float> scale = Transform3D<float> (scale_rot);
+            face.applyTransform(scale);
+
             // Read 2 byte attribute - which is not used
             input.get();
             input.get();
@@ -291,6 +295,10 @@ namespace
                 state.getLine(input);
                 // endfacet
                 state.getLine(input);
+
+            Rotation3D <float> scale_rot = Rotation3D<float> (1e-3, 0, 0, 0,1e-3, 0, 0, 0,1e-3);
+            Transform3D	<float> scale = Transform3D<float> (scale_rot);
+            face.applyTransform(scale);
 
                 // save the facet in the vector
                 result.add(face);
