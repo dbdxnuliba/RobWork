@@ -96,7 +96,7 @@ namespace rw { namespace common {
          * @brief get the name of this propertymap
          * @return name of this propertymap
          */
-        const std::string& getName(){ return _name; };
+        const std::string& getName()const{ return _name; };
 
         /**
          * @brief Set the value of a property
