@@ -38,7 +38,7 @@ PropertyMap::PropertyMap(const PropertyMap& other)
 		const PropertyBase::Ptr base = *it;
         this->insert(ownedPtr(base->clone()));
     }
-    this->_name ="Copy of "+other.getName();
+    this->_name = other.getName();
 }
 
 bool PropertyMap::add(PropertyBase::Ptr property) {
