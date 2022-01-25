@@ -1,0 +1,42 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "RWS_RelWithDebInfo_msvc64",
+            "displayName": "RWS Visual Studio Community 2017 RelWithDebInfo - amd64",
+            "description": "Using compilers for Visual Studio 15 2017 (x64 architecture)",
+            "toolchainFile": "",
+            "generator": "Visual Studio 15 2017",
+            "toolset": {
+                "strategy": "set",
+                "value": "host=x64"
+            },
+            "architecture": {
+                "strategy": "set",
+                "value": "x64"
+            },
+            "binaryDir": "${sourceParentDir}/Build/RWS/RelWithDebInfo",
+            "cacheVariables": {
+                "CMAKE_C_FLAGS":"/MP",
+                "CMAKE_CXX_FLAGS":"/MP -DWIN32",
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_PREFIX_PATH":"C:\\Qt\\5.12.2\\msvc2017_64\\lib\\cmake",
+                "RWS_BUILD_SANDBOX":false,
+                "RWS_IS_TESTS_ENABLED":false
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "RWS_RelWithDebInfo_msvc64",
+            "description": "",
+            "displayName": "RWS Visual Studio Community 2017 RelWithDebInfo - amd64",
+            "configurePreset": "RWS_RelWithDebInfo_msvc64",
+            "cleanFirst": false,
+            "verbose": true,
+            "configuration": "RelWithDebInfo",
+            "nativeToolOptions": ["/m"],
+            "targets":["ALL_BUILD"]
+        }
+    ]
+}
