@@ -21,6 +21,7 @@
 #include <rw/common/Ptr.hpp>
 
 #include <vector>
+#include <string>
 
 namespace rw { namespace geometry { class Geometry; } }
 namespace rw { namespace kinematics { class Frame; } }

@@ -1,0 +1,72 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "RW_RelWithDebInfo_msvc64",
+            "displayName": "Visual Studio Community 2017 RelWithDebInfo - amd64",
+            "description": "Using compilers for Visual Studio 15 2017 (x64 architecture)",
+            "toolchainFile": "",
+            "generator": "Visual Studio 15 2017",
+            "toolset": {
+                "strategy": "set",
+                "value": "host=x64"
+            },
+            "architecture": {
+                "strategy": "set",
+                "value": "x64"
+            },
+            "binaryDir": "${sourceParentDir}/Build/RW/RelWithDebInfo",
+            "cacheVariables": {
+                "CMAKE_C_FLAGS":"/MP",
+                "CMAKE_CXX_FLAGS":"/MP -DWIN32",
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/RelWithDebInfo",
+                "Boost_NO_SYSTEM_PATHS": {
+                    "type": "BOOL",
+                    "value": true
+                },
+                "BOOST_ROOT": "C:\\Dev\\Libs\\boost_1_67_0",
+                "BOOST_INCLUDEDIR": "C:\\Dev\\Libs\\boost_1_67_0",
+                "BOOST_LIBRARYDIR": "C:\\Dev\\Libs\\boost_1_67_0\\lib64-msvc-14.1", 
+                "XERCESC_ROOT": "C:\\Dev\\Libs\\xerces-c-3.2.3\\xerces-install",
+                "BUILD_rw_python": {
+                    "type": "BOOL",
+                    "value": false
+                },
+                "RW_BUILD_SANDBOX": {
+                    "type": "BOOL",
+                    "value": false
+                },
+                "RW_BUILD_SOFTBODY": {
+                    "type": "BOOL",
+                    "value": false
+                },
+                "RW_USE_GTEST": {
+                    "type": "BOOL",
+                    "value": false
+                },
+                "RW_USE_LUA": {
+                    "type": "BOOL",
+                    "value": false
+                },                
+                "RW_IS_TESTS_ENABLED": {
+                    "type": "BOOL",
+                    "value": false
+                }
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "RW_RelWithDebInfo_msvc64",
+            "description": "",
+            "displayName": "Visual Studio Community 2017 RelWithDebInfo - amd64",
+            "configurePreset": "RW_RelWithDebInfo_msvc64",
+            "cleanFirst": false,
+            "verbose": true,
+            "configuration": "RelWithDebInfo",
+            "nativeToolOptions": ["/m"],
+            "targets":["ALL_BUILD"]
+        }
+    ]
+}
