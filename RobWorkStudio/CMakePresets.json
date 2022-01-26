@@ -19,6 +19,8 @@
             "cacheVariables": {
                 "CMAKE_C_FLAGS":"/MP",
                 "CMAKE_CXX_FLAGS":"/MP -DWIN32",
+                "CMAKE_C_COMPILER":"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
+                "CMAKE_CXX_COMPILER":"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
                 "CMAKE_BUILD_TYPE": "RelWithDebInfo",
                 "CMAKE_PREFIX_PATH":"C:\\Qt\\5.12.2\\msvc2017_64\\lib\\cmake",
                 "RWS_BUILD_SANDBOX":false,
