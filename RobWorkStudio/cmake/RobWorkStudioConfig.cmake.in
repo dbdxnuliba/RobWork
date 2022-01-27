@@ -103,7 +103,11 @@ get_filename_component(RWSCFG_ROOT ${CMAKE_CURRENT_LIST_FILE} PATH)
 if(DEFINED RobWorkStudio_DIR)
   if(EXISTS "${RobWorkStudio_DIR}/../src/RobWorkStudioConfig.hpp")
     # Found RobWorkStudio in a build tree of RobWork
-    set(RWSCFG_ROOT "${RobWorkStudio_DIR}")
+        if(DEFINED WIN32)
+      string(REPLACE "\\" "/" RWSCFG_ROOT ${RobWorkStudio_DIR})
+    else()
+      set( RWSCFG_ROOT "${RobWorkStudio_DIR}")
+    endif()
     set(is_installed false)
   elseif(EXISTS "${RobWorkStudio_DIR}/RobWorkStudioConfig.cmake")
     # Found a RobWorkStudio installation

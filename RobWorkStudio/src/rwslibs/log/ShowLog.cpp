@@ -26,7 +26,9 @@
 #include <sstream>
 #include <QEvent>
 #include <QApplication>
+#include <QGridLayout>
 #include <QTextEdit>
+#include <QPushButton>
 
 #include <boost/bind.hpp>
 
@@ -103,7 +105,21 @@ ShowLog::ShowLog():
     _endCursor = new QTextCursor( );
     *_endCursor = _editor->textCursor();
 
-    setWidget(_editor);  // Sets the widget on the QDockWidget
+    /** Adding a new "Clear log button"
+     **/
+
+    int row = 0;
+    // Create a pointer to this QDockWidget and add the root layout
+    QWidget* p_baseWidget = new QWidget(this);
+    QGridLayout* p_baseLayout = new QGridLayout(p_baseWidget);
+    p_baseWidget->setLayout(p_baseLayout);
+
+    // Create the push button widget
+    QPushButton* p_pbtnClearEditor = new QPushButton("Clear", p_baseWidget);
+    connect(p_pbtnClearEditor, SIGNAL(clicked()), _editor, SLOT(clear()));
+    p_baseLayout->addWidget(p_pbtnClearEditor, row++, 0);
+    p_baseLayout->addWidget(_editor, row++, 0);
+    setWidget(p_baseWidget);  // Sets the widget on the QDockWidget
 
     _writers.push_back( ownedPtr( new WriterWrapper(this, Qt::black) ) );
     _writers.push_back( ownedPtr( new WriterWrapper(this, Qt::darkYellow) ) );
