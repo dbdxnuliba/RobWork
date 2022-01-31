@@ -1,11 +1,10 @@
 {
-    "version": 3,
+    "version": 2,
     "configurePresets": [
         {
             "name": "RWS_RelWithDebInfo_msvc64",
             "displayName": "RWS Visual Studio Community 2017 RelWithDebInfo - amd64",
             "description": "Using compilers for Visual Studio 15 2017 (x64 architecture)",
-            "toolchainFile": "",
             "generator": "Visual Studio 15 2017",
             "toolset": {
                 "strategy": "set",
