@@ -24,7 +24,6 @@ tmp
 /.csettings
 /CPackConfig.cmake
 /CPackSourceConfig.cmake
-/CMakeSettings.json
 /.settings
 /.vs/*
 /out/*
