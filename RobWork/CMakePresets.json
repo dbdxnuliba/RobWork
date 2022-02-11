@@ -1,6 +1,8 @@
 {
     "version": 2,
-    "cmakeMinimumRequired": {"major": 3},
+    "cmakeMinimumRequired": {
+        "major": 3
+    },
     "configurePresets": [
         {
             "name": "RW_RelWithDebInfo_msvc64",
@@ -17,11 +19,11 @@
             },
             "binaryDir": "${sourceParentDir}/Build/RW/RelWithDebInfo",
             "cacheVariables": {
-                "CMAKE_C_FLAGS":"/MP",
-                "CMAKE_CXX_FLAGS":"/MP -DWIN32",
+                "CMAKE_C_FLAGS": "/MP",
+                "CMAKE_CXX_FLAGS": "/MP -DWIN32",
                 "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-                "CMAKE_C_COMPILER":"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
-                "CMAKE_CXX_COMPILER":"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
+                "CMAKE_C_COMPILER": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
+                "CMAKE_CXX_COMPILER": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/RelWithDebInfo",
                 "Boost_NO_SYSTEM_PATHS": {
                     "type": "BOOL",
@@ -29,7 +31,7 @@
                 },
                 "BOOST_ROOT": "C:\\Dev\\Libs\\boost_1_67_0",
                 "BOOST_INCLUDEDIR": "C:\\Dev\\Libs\\boost_1_67_0",
-                "BOOST_LIBRARYDIR": "C:\\Dev\\Libs\\boost_1_67_0\\lib64-msvc-14.1", 
+                "BOOST_LIBRARYDIR": "C:\\Dev\\Libs\\boost_1_67_0\\lib64-msvc-14.1",
                 "XERCESC_ROOT": "C:\\Dev\\Libs\\xerces-c-3.2.3\\xerces-install",
                 "BUILD_rw_python": {
                     "type": "BOOL",
@@ -50,11 +52,31 @@
                 "RW_USE_LUA": {
                     "type": "BOOL",
                     "value": false
-                },                
+                },
                 "RW_IS_TESTS_ENABLED": {
                     "type": "BOOL",
                     "value": false
                 }
+            }
+        },
+        {
+            "name": "legion-config",
+            "description": "",
+            "displayName": "legion-config",
+            "inherits": [
+                "RW_RelWithDebInfo_msvc64"
+            ],
+            "cacheVariables": {
+                "Boost_NO_SYSTEM_PATHS": {
+                    "type": "BOOL",
+                    "value": true
+                },
+                "BOOST_ROOT": "D:\\Dev\\Libs\\boost_1_74_0",
+                "BOOST_INCLUDEDIR": "D:\\Dev\\Libs\\boost_1_74_0",
+                "BOOST_LIBRARYDIR": ":\\Dev\\Libs\\boost_1_74_0\\lib64-msvc-14.1",
+                "CMAKE_C_COMPILER": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
+                "CMAKE_CXX_COMPILER": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
+                "XERCESC_ROOT": "D:\\Dev\\Libs\\xerces-c-3.2.3\\xerces-install"
             }
         }
     ],
@@ -67,8 +89,21 @@
             "cleanFirst": false,
             "verbose": true,
             "configuration": "RelWithDebInfo",
-            "nativeToolOptions": ["/m"],
-            "targets":["ALL_BUILD"]
+            "nativeToolOptions": [
+                "/m"
+            ],
+            "targets": [
+                "ALL_BUILD"
+            ]
+        },
+        {
+            "name": "legion-build",
+            "description": "",
+            "displayName": "",
+            "inherits": [
+                "RW_RelWithDebInfo_msvc64"
+            ],
+            "configurePreset": "legion-config"
         }
     ]
 }
